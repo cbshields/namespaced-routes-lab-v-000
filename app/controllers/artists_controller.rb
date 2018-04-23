@@ -1,4 +1,6 @@
 class ArtistsController < ApplicationController
+  #solution
+  #before_action :set_preferences, only: [:index, :new]
   def index
     @preference = Preference.first
     if @preference && @preference.artist_sort_order
@@ -60,5 +62,8 @@ class ArtistsController < ApplicationController
     params.require(:artist).permit(:name)
   end
 
-
+ #solution:
+ #  def set_preferences
+ #   @preferences = Preference.first
+ # end
 end
